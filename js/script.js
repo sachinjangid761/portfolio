@@ -142,41 +142,4 @@ mybutton.addEventListener("click",function(){
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
-$(document).ready(function() {
-  $('.send-email').on('click', function(e) {
-      e.preventDefault(); // Prevent default form submission
-      var name = jQuery('#exampleFormControlInput1').val();
-      var email = jQuery('#exampleFormControlInput12').val();
-      var mobileNumber = jQuery('#exampleFormControlInput3').val();
-      var messages = jQuery('#exampleFormControlInput4').val();
-      var message = `
-      <ul>
-      <li>Name : ${name}</li>
-      <li>Mobile Number : ${mobileNumber} </li>
-      <li>Email Id : ${email} </li>
-      <li>Message : ${messages} </li>
-      </ul>
-      `
-      $.ajax({
-          url: 'https://api.brevo.com/v3/smtp/email',
-          type: 'POST',
-          contentType: 'application/json',
-          headers: {
-              'accept': 'application/json',
-              'api-key': 'YOUR_BREVO_API_KEY' // Replace with your Brevo API key
-          },
-          data: JSON.stringify({
-              sender: { email: 'sachinjangid033@gmail.com' }, // Replace with your sender email
-              to: [{ email: 'sachinjangid033@gmail.com' }],
-              subject: subject,
-              htmlContent: `<html><body><p>${message}</p></body></html>`
-          }),
-          success: function(response) {
-              $('#response').html('<p>Email sent successfully!</p>');
-          },
-          error: function(xhr, status, error) {
-              $('#response').html('<p>Error sending email: ' + error + '</p>');
-          }
-      });
-  });
-});
+
