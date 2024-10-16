@@ -143,7 +143,7 @@ mybutton.addEventListener("click",function(){
   document.documentElement.scrollTop = 0;
 });
 $(document).ready(function() {
-  $('#sendEmailForContecting').on('submit', function(e) {
+  $('.send-email').on('click', function(e) {
       e.preventDefault(); // Prevent default form submission
       var name = jQuery('#exampleFormControlInput1').val();
       var email = jQuery('#exampleFormControlInput12').val();
