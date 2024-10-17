@@ -158,6 +158,7 @@ $(document).ready(function() {
       </ul>
       `
     var apiKey = jQuery('#apiKey').val();
+    console.log(apiKey)
       var subject = 'This user is wanting to connect you';
       $.ajax({
           url: 'https://api.brevo.com/v3/smtp/email',
