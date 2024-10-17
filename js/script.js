@@ -166,7 +166,7 @@ $(document).ready(function() {
           contentType: 'application/json',
           headers: {
               'accept': 'application/json',
-              'api-key': apiKey // Replace with your Brevo API key
+              'api-key': "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" // Replace with your Brevo API key
           },
           data: JSON.stringify({
               sender: { email: 'sachinjangid033@gmail.com' }, // Replace with your sender email
