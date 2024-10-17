@@ -157,6 +157,7 @@ $(document).ready(function() {
       <li>Message : ${messages} </li>
       </ul>
       `
+    var apiKey = jQuery('#apiKey').val();
       var subject = 'This user is wanting to connect you';
       $.ajax({
           url: 'https://api.brevo.com/v3/smtp/email',
@@ -164,7 +165,7 @@ $(document).ready(function() {
           contentType: 'application/json',
           headers: {
               'accept': 'application/json',
-              'api-key': '' // Replace with your Brevo API key
+              'api-key': apiKey // Replace with your Brevo API key
           },
           data: JSON.stringify({
               sender: { email: 'sachinjangid033@gmail.com' }, // Replace with your sender email
