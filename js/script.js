@@ -157,7 +157,7 @@ $(document).ready(function() {
       <li>Message : ${messages} </li>
       </ul>
       `
-    var apiKey = jQuery('#apiKey').val();
+    var apiKey = "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";
     console.log(apiKey)
       var subject = 'This user is wanting to connect you';
       $.ajax({
