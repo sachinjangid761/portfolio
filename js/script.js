@@ -147,39 +147,21 @@ $(document).ready(function() {
       e.preventDefault(); // Prevent default form submission
       var name = jQuery('#exampleFormControlInput1').val();
       var email = jQuery('#exampleFormControlInput12').val();
-      var mobileNumber = jQuery('#exampleFormControlInput3').val();
-      var messages = jQuery('#exampleFormControlInput4').val();
-      var message = `
-      <ul>
-      <li>Name : ${name}</li>
-      <li>Mobile Number : ${mobileNumber} </li>
-      <li>Email Id : ${email} </li>
-      <li>Message : ${messages} </li>
-      </ul>
-      `
-    var apiKey = "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";
-    console.log(apiKey)
-      var subject = 'This user is wanting to connect you';
-      $.ajax({
-          url: 'https://api.brevo.com/v3/smtp/email',
-          type: 'POST',
-          contentType: 'application/json',
-          headers: {
-              'accept': 'application/json',
-              'api-key': "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" // Replace with your Brevo API key
-          },
-          data: JSON.stringify({
-              sender: { email: 'sachinjangid033@gmail.com' }, // Replace with your sender email
-              to: [{ email: 'sachinjangid033@gmail.com' }],
-              subject: subject,
-              htmlContent: `<html><body><p>${message}</p></body></html>`
-          }),
-          success: function(response) {
-              $('#response').html('<p>Email sent successfully!</p>');
-          },
-          error: function(xhr, status, error) {
-              $('#response').html('<p>Error sending email: ' + error + '</p>');
-          }
-      });
+      var mobile = jQuery('#exampleFormControlInput3').val();
+      var message = jQuery('#exampleFormControlInput4').val();
+      jQuery.ajax({
+              method: "POST",
+              type: "application/json",
+              url: "https://development.robustdecoders.com/testingapi.php",
+              data: {
+                  "name": name,
+                  "email": email,
+                  'mobile': mobile,
+                  "message": message
+              },
+              success: function(response) {
+                  console.log(response);
+              }
+      })
   });
 });
